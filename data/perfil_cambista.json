@@ -1,0 +1,17 @@
+{
+    "nome": "Maria Oliveira",
+    "idade": 28,
+    "profissão": "Desenvolvedora Freelancer",
+    "renda_mensal": 8000.00,
+    "perfil_cambio": "moderado",
+    "objetivo_principal": "Diversificar patrimônio em moeda forte e cripto",
+    "patrimonio_total_brl": 25000.00,
+    "saldo_usd": 1500.00,
+    "saldo_eur": 800.00,
+    "saldo_btc": 0.015,
+    "meta_acumulação": {
+      "moeda": "USD",
+      "valor_alvo": 5000.00,
+      "prazo": "2026-12"
+    }
+}

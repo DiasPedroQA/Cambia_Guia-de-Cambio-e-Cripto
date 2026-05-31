@@ -1,0 +1,26 @@
+[
+    {
+      "código": "USD",
+      "nome": "Dólar Americano",
+      "tipo": "fiduciária",
+      "pais": "Estados Unidos",
+      "volatilidade": "baixa",
+      "indicado_para": "Reserva de valor e proteção cambial"
+    },
+    {
+      "código": "EUR",
+      "nome": "Euro",
+      "tipo": "fiduciária",
+      "pais": "Zona do Euro",
+      "volatilidade": "baixa",
+      "indicado_para": "Diversificação geográfica"
+    },
+    {
+      "código": "BTC",
+      "nome": "Bitcoin",
+      "tipo": "criptomoeda",
+      "pais": "Global (descentralizada)",
+      "volatilidade": "alta",
+      "indicado_para": "Perfil arrojado, longo prazo, proteção contra inflação"
+    }
+]
