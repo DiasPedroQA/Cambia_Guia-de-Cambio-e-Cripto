@@ -62,7 +62,7 @@
 
 > *Pitch gravado e disponível no YouTube (não listado — só acessa quem tem o link):*
 
-[🎬 Assistir ao Pitch da Câmbia](COLE_SEU_LINK_AQUI)
+[🎬 Assistir ao Pitch da Câmbia](<https://www.youtube.com/>)
 
 ---
 
