@@ -16,7 +16,6 @@ from src.ui.estilos import aplicar_estilos
 from src.ui.sidebar import renderizar_sidebar
 
 
-
 def main() -> None:
     """Função principal que renderiza a interface completa do Streamlit."""
     st.set_page_config(
@@ -46,7 +45,8 @@ def main() -> None:
     renderizar_status_mercado(usd=usd_atual, eur=eur_atual, btc=btc_atual)
 
     # Renderizar componentes
-    renderizar_sidebar(perfil=perfil, usd=usd_atual, eur=eur_atual, btc=btc_atual)
+    renderizar_sidebar(perfil=perfil, usd=usd_atual,
+                       eur=eur_atual, btc=btc_atual)
 
     alertas_gerados: list[str] = verificar_alertas(
         cotacao_dolar=usd_atual,

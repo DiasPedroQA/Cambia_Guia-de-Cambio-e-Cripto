@@ -2,36 +2,33 @@
 # Em Windows (CMD/PowerShell) use:  make <alvo>
 # Em macOS/Linux use:              make <alvo>
 
-# Tenta usar python, depois python3
-PYTHON := $(shell command -v python 2> NUL || command -v python3 2> /dev/null)
+# Detecta o comando Python disponível
+PYTHON := $(shell command -v python 2> /dev/null || command -v python3 2> /dev/null)
 
-# Caminho do arquivo principal do Streamlit
+# Arquivo principal do Streamlit
 APP := src/app.py
 
-# --------------------------------------------------------------------
-# Alvos principais
-# --------------------------------------------------------------------
+# Ambiente virtual
+VENV := .venv
 
-# Instala dependências globais do projeto
+# --------------------------------------------------------------------
+# Cria ambiente virtual e instala dependências
+# --------------------------------------------------------------------
 install:
-	"$(PYTHON)" -m pip install --upgrade pip
-	"$(PYTHON)" -m pip install -r [requirements.txt](VALID_FILE)
+	"$(PYTHON)" -m venv $(VENV)
+	$(VENV)/bin/python -m pip install --upgrade pip 2>/dev/null || \
+	$(VENV)\Scripts\python.exe -m pip install --upgrade pip
+	$(VENV)/bin/python -m pip install -r requirements.txt 2>/dev/null || \
+	$(VENV)\Scripts\python.exe -m pip install -r requirements.txt
 
-# Cria e instala dependências em um venv chamado .venv (recomendado)
-venv:
-	"$(PYTHON)" -m venv .venv
-	. [.venv/bin/activate](VALID_FILE) 2>/dev/null || .venv\Scripts\activate && \
-	"$(PYTHON)" -m pip install --upgrade pip && \
-	"$(PYTHON)" -m pip install -r [requirements.txt](VALID_FILE)
-
-# Roda o app Streamlit (tenta usar o Python do venv se existir)
+# --------------------------------------------------------------------
+# Executa a aplicação Streamlit usando o ambiente virtual
+# --------------------------------------------------------------------
 run:
-	if [ -d ".venv" ]; then \
-		. [.venv/bin/activate](VALID_FILE) 2>/dev/null || .venv\Scripts\activate; \
-		"$(PYTHON)" -m streamlit run $(APP); \
-	else \
-		"$(PYTHON)" -m streamlit run $(APP); \
-	fi
+	$(VENV)/bin/python -m streamlit run $(APP) 2>/dev/null || \
+	$(VENV)\Scripts\python.exe -m streamlit run $(APP)
 
-# Atalho: cria venv + instala deps + roda o app
+# --------------------------------------------------------------------
+# Instala tudo e executa
+# --------------------------------------------------------------------
 start: install run
