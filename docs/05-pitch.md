@@ -1,6 +1,6 @@
 <!-- docs/05-pitch.md -->
 
-# Pitch da Câmbia (3 minutos)
+# Pitch da Câmbia (3/4 minutos)
 
 > 💡 Usei slides simples pra apoiar meu Pitch e mostrar a solução na prática.
 
@@ -62,7 +62,7 @@
 
 > *Pitch gravado e disponível no YouTube (não listado — só acessa quem tem o link):*
 
-[🎬 Assistir ao Pitch da Câmbia](<https://www.youtube.com/>)
+[🎬 Assistir ao Pitch da Câmbia](<https://www.youtube.com/watch?v=le9QLG0Wfvo>)
 
 ---
 
@@ -72,7 +72,7 @@
 |-----------------|----------------------------------------------------------------|
 | **Ferramenta**  | [Loom](https://www.loom.com/) (gratuito, grava tela + webcam)  |
 | **Privacidade** |   YouTube — modo **não listado** (só acessa quem tem o link)   |
-|   **Duração**   |                        3 minutos exatos                        |
+|   **Duração**   |                      3/4 minutos exatos                        |
 |   **Roteiro**   | Segui a tabela acima — problema → solução → demo → diferencial |
 
 ### Meu passo a passo na gravação

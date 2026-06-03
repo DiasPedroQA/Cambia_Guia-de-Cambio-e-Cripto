@@ -1,83 +1,77 @@
 # ==========================================================
-# Makefile - Cambia
+# Makefile — Câmbia
+# ==========================================================
+# Uso: make <comando>
+# Exemplo: make install && make run
 # ==========================================================
 
-APP := app.py
-VENV := .venv
+APP     := app.py
+VENV    := .venv
+PYTHON  := python3
 
 # ==========================================================
-# Linux
+# Comandos universais (detecta SO automaticamente)
 # ==========================================================
 
-install-linux:
-	python3 -m venv $(VENV)
-	$(VENV)/bin/python -m pip install --upgrade pip
-	$(VENV)/bin/python -m pip install -r requirements.txt
+install:
+	@echo "📦 Criando ambiente virtual e instalando dependências..."
+	@if [ -d $(VENV) ]; then \
+		echo "⚠️  Ambiente virtual já existe. Use 'make clean' para recriar."; \
+	else \
+		$(PYTHON) -m venv $(VENV) && \
+		. $(VENV)/bin/activate 2>/dev/null || . $(VENV)/Scripts/activate 2>/dev/null; \
+		python -m pip install --upgrade pip && \
+		python -m pip install -r requirements.txt && \
+		echo "✅ Instalação concluída!"; \
+	fi
 
-run-linux:
-	$(VENV)/bin/python -m streamlit run $(APP)
+run:
+	@echo "🚀 Iniciando a Câmbia..."
+	@if [ -f $(VENV)/bin/streamlit ]; then \
+		$(VENV)/bin/streamlit run $(APP); \
+	elif [ -f $(VENV)/Scripts/streamlit.exe ]; then \
+		$(VENV)/Scripts/streamlit.exe run $(APP); \
+	else \
+		echo "❌ Streamlit não encontrado. Rode 'make install' primeiro."; \
+	fi
 
-start-linux: install-linux run-linux
+start: install run
+	@echo "✨ Tudo pronto!"
 
-clean-linux:
-	rm -rf $(VENV)
+clean:
+	@echo "🧹 Removendo ambiente virtual..."
+	@rm -rf $(VENV)
+	@echo "✅ Limpeza concluída!"
 
-# ==========================================================
-# macOS
-# ==========================================================
+ollama:
+	@echo "🦙 Iniciando Ollama..."
+	@ollama serve
 
-install-mac:
-	python3 -m venv $(VENV)
-	$(VENV)/bin/python -m pip install --upgrade pip
-	$(VENV)/bin/python -m pip install -r requirements.txt
+ollama-pull:
+	@echo "📥 Baixando modelo llama3.2:1b..."
+	@ollama pull llama3.2:1b
+	@echo "✅ Modelo baixado!"
 
-run-mac:
-	$(VENV)/bin/python -m streamlit run $(APP)
-
-start-mac: install-mac run-mac
-
-clean-mac:
-	rm -rf $(VENV)
-
-# ==========================================================
-# Windows (CMD / PowerShell)
-# ==========================================================
-
-install-win:
-	python -m venv $(VENV)
-	$(VENV)\Scripts\python.exe -m pip install --upgrade pip
-	$(VENV)\Scripts\python.exe -m pip install -r requirements.txt
-
-run-win:
-	$(VENV)\Scripts\python.exe -m streamlit run $(APP)
-
-start-win: install-win run-win
-
-clean-win:
-	rmdir /s /q $(VENV)
-
-# ==========================================================
-# Ajuda
-# ==========================================================
+test:
+	@echo "🧪 Verificando instalação..."
+	@$(PYTHON) --version
+	@which streamlit || echo "❌ Streamlit não instalado"
+	@which ollama || echo "❌ Ollama não instalado"
+	@echo "✅ Verificação concluída!"
 
 help:
 	@echo ""
-	@echo "Comandos disponíveis:"
+	@echo "💱 Comandos disponíveis — Câmbia"
+	@echo "=================================="
 	@echo ""
-	@echo "Linux:"
-	@echo "  make install-linux"
-	@echo "  make run-linux"
-	@echo "  make start-linux"
-	@echo "  make clean-linux"
+	@echo "  make install      📦 Criar ambiente e instalar dependências"
+	@echo "  make run          🚀 Rodar a aplicação"
+	@echo "  make start        ⚡ Instalar + Rodar (tudo de uma vez)"
+	@echo "  make clean        🧹 Remover ambiente virtual"
+	@echo "  make ollama       🦙 Iniciar servidor Ollama"
+	@echo "  make ollama-pull  📥 Baixar modelo llama3.2:1b"
+	@echo "  make test         🧪 Verificar se tudo está instalado"
+	@echo "  make help         ❓ Mostrar esta ajuda"
 	@echo ""
-	@echo "macOS:"
-	@echo "  make install-mac"
-	@echo "  make run-mac"
-	@echo "  make start-mac"
-	@echo "  make clean-mac"
-	@echo ""
-	@echo "Windows:"
-	@echo "  make install-win"
-	@echo "  make run-win"
-	@echo "  make start-win"
-	@echo "  make clean-win"
+
+.PHONY: install run start clean ollama ollama-pull test help

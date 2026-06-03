@@ -1,295 +1,147 @@
-# 🎨 Assets da Câmbia
+# 💱 Câmbia — Sua Guia de Câmbio e Cripto
 
-> Repositório central de recursos visuais, materiais de apresentação e artefatos de apoio do projeto **Câmbia – Guia de Câmbio e Cripto**.
+> *"Porque dinheiro não precisa ser um bicho de sete cabeças — e câmbio muito menos."*
 
-Esta pasta concentra todos os elementos utilizados na documentação, demonstrações, apresentações e materiais de avaliação da solução.
-
----
-
-## 📖 Sumário
-
-* Sobre a Câmbia
-* Objetivo desta Pasta
-* Inventário de Assets
-* Galeria da Aplicação
-* Arquitetura da Solução
-* Vídeo Pitch
-* Estrutura do Repositório
-* Guia de Execução
-* Status do Projeto
-* Autor
-* Licença
+Agente de IA Generativa que monitora **dólar, euro e bitcoin** em tempo real, mostra sua carteira, alerta sobre oscilações e explica conceitos de câmbio de forma simples — **100% local, sem enviar seus dados pra lugar nenhum.**
 
 ---
 
-## 💱 Sobre a Câmbia
+## 🧠 O que a Câmbia faz?
 
-A **Câmbia** é uma assistente financeira baseada em Inteligência Artificial Generativa, desenvolvida para auxiliar usuários no acompanhamento de moedas estrangeiras e criptoativos.
-
-A aplicação combina um modelo de linguagem executado localmente com fontes externas de cotação para fornecer respostas contextualizadas sobre:
-
-* Dólar (USD)
-* Euro (EUR)
-* Bitcoin (BTC)
-* Carteira financeira do usuário
-* Histórico de movimentações
-* Conceitos de câmbio e criptomoedas
-
-### Funcionalidades
-
-| Recurso                   | Descrição                         |
-| ------------------------- | --------------------------------- |
-| 📈 Cotações em tempo real | Consulta de USD, EUR e BTC        |
-| 💼 Carteira consolidada   | Patrimônio atualizado             |
-| 🚨 Alertas inteligentes   | Oscilações relevantes de mercado  |
-| 📚 Educação financeira    | Explicações sobre câmbio e cripto |
-| 📝 Histórico              | Registro das operações realizadas |
-
-### Escopo do Projeto
-
-A Câmbia possui caráter educacional e demonstrativo.
-
-Não realiza:
-
-* Recomendações de investimento
-* Operações financeiras reais
-* Compra ou venda de ativos
-* Consultoria financeira profissional
+- ✅ **Cotações em tempo real** — USD, EUR e BTC atualizados via API
+- ✅ **Carteira consolidada** — patrimônio sempre visível na sidebar
+- ✅ **Alertas automáticos** — avisa quando o mercado oscila mais de 2%
+- ✅ **Quick Replies** — sugestões de perguntas prontas pra explorar
+- ✅ **Badges de mercado** — status visual: "Dólar Baixo", "BTC Aquecido"
+- ✅ **100% local** — Ollama + llama3.2:1b rodando na sua máquina
 
 ---
 
-## 🎯 Objetivo desta Pasta
+## 📸 Demonstração
 
-Os arquivos presentes em `assets/` são utilizados para:
+|                       Tela principal                       |                   Chat em ação                    |
+|:----------------------------------------------------------:|:-------------------------------------------------:|
+| ![Tela principal](./assets/cambia-menu-lateral-aberto.png) | ![Chat](./assets/cambia-menu-lateral-fechado.png) |
 
-* Documentação técnica
-* README principal
-* Wiki do projeto
-* Demonstrações visuais
-* Apresentações para avaliação
-* Vídeo Pitch
-* Materiais de portfólio
-
----
-
-## 📂 Inventário de Assets
-
-| Arquivo                                  | Finalidade              | Status |
-| ---------------------------------------- | ----------------------- | ------ |
-| `Câmbia - Guia de Câmbio.pdf`            | Documento de contexto   | ✅      |
-| `cambia-menu-lateral-aberto.png`         | Interface completa      | ✅      |
-| `cambia-menu-lateral-fechado.png`        | Interface simplificada  | ✅      |
-| `leu-a-pergunta-e-pensa-na-resposta.png` | Processamento do agente | ✅      |
-| `P1.png`                                 | Consulta patrimonial    | ✅      |
-| `P2.png`                                 | Análise financeira      | ✅      |
-| `P3.png`                                 | Consulta cambial        | ✅      |
-| `P4.png`                                 | Conteúdo educativo      | ✅      |
-| `P5.png`                                 | Continuação da análise  | ✅      |
-| `video-pitch-cambia.mp4`                 | Apresentação oficial    | ✅      |
-| `arquitetura-cambia.png`                 | Diagrama arquitetural   | ✅      |
-| `cambia-demo.gif`                        | Demonstração animada    | ✅      |
-
----
-
-## 📸 Galeria da Aplicação
-
-### Interface Principal
-
-#### Menu lateral aberto
-
-![Menu Lateral Aberto](./cambia-menu-lateral-aberto.png)
-
-Visualização completa contendo:
-
-* Perfil da cliente
-* Carteira financeira
-* Cotações atualizadas
-* Indicadores de mercado
-* Área conversacional
-
-#### Menu lateral fechado
-
-![Menu Lateral Fechado](./cambia-menu-lateral-fechado.png)
-
-Experiência focada exclusivamente na interação com o agente.
-
-### Processamento de Solicitações
-
-![Processamento](./leu-a-pergunta-e-pensa-na-resposta.png)
-
-Representação do momento em que o modelo interpreta o contexto e gera uma resposta.
-
-### Exemplos de Respostas
-
-#### Patrimônio Consolidado
-
-![P1](./P1.png)
-
-Consulta detalhada dos ativos financeiros.
-
-#### Análise Patrimonial
-
-![P2](./P2.png)
-
-Avaliação baseada no histórico da cliente.
-
-#### Consulta Cambial
-
-![P3](./P3.png)
-
-Resposta contextualizada sobre o mercado de moedas.
-
-#### Educação Financeira
-
-![P4](./P4.png)
-
-Explicações sobre Bitcoin e volatilidade.
-
-#### Continuação da Análise
-
-![P5](./P5.png)
-
-Complementação das recomendações educacionais.
-
----
-
-## 🏗️ Arquitetura da Solução
-
-### Stack Tecnológica
-
-| Camada       | Tecnologia  |
-| ------------ | ----------- |
-| Front-end    | Streamlit   |
-| LLM Runtime  | Ollama      |
-| Modelo       | llama3.2:1b |
-| API Cambial  | AwesomeAPI  |
-| API Cripto   | CoinGecko   |
-| Persistência | JSON e CSV  |
-| Linguagem    | Python      |
-
-### Fluxo Operacional
-
-```mermaid
-flowchart TD
-    A[Usuário] --> B[Streamlit]
-    B --> C[Ollama]
-    C --> D[Base de Conhecimento]
-    D --> C
-    B --> E[AwesomeAPI]
-    B --> F[CoinGecko]
-    C --> G[Resposta Inteligente]
-    G --> H[Alertas de Mercado]
-```
-
-### Descrição do Fluxo
-
-1. O usuário envia uma solicitação.
-2. O Streamlit organiza o contexto.
-3. O Ollama processa a consulta localmente.
-4. A base de conhecimento fornece informações complementares.
-5. APIs externas atualizam as cotações.
-6. A resposta é apresentada ao usuário.
-7. Alertas são exibidos quando aplicável.
+|  Consulta de carteira  | Análise sobre bitcoin  |
+|:----------------------:|:----------------------:|
+| ![P1](./assets/P1.png) | ![P4](./assets/P4.png) |
 
 ---
 
 ## 🎬 Vídeo Pitch
 
-### Conteúdo
+[![Vídeo Pitch](https://img.youtube.com/vi/le9QLG0Wfvo/0.jpg)](https://www.youtube.com/watch?v=le9QLG0Wfvo)
 
-* Problema
-* Solução
-* Arquitetura
-* Demonstração
-* Diferenciais
-
-### Duração
-
-3 minutos
-
-### Publicação
-
-YouTube (não listado)
+> 📺 [Assistir ao Pitch da Câmbia no YouTube](https://www.youtube.com/watch?v=le9QLG0Wfvo) — *vídeo não listado*
 
 ---
 
-## ⚙️ Estrutura do Repositório
+## 🧰 Stack Tecnológica
+
+|      Camada      |                  Tecnologia                   |
+|------------------|-----------------------------------------------|
+|    Interface     |      [Streamlit](https://streamlit.io/)       |
+|       LLM        | [Ollama](https://ollama.com/) + `llama3.2:1b` |
+| Cotações USD/EUR | [AwesomeAPI](https://docs.awesomeapi.com.br/) |
+|    Cotação BTC   |    [CoinGecko](https://www.coingecko.com/)    |
+|      Dados       |              JSON e CSV mockados              |
+|      Visual      |     CSS customizado + badges interativos      |
+
+---
+
+## 📁 Estrutura do Projeto
 
 ```text
 Cambia_Guia-de-Cambio-e-Cripto/
-├── assets/
-├── data/
-├── docs/
-├── src/
-├── app.py
-├── requirements.txt
-├── README.md
-├── LICENSE
-└── .gitignore
+├── assets/              # Prints, vídeo pitch e materiais visuais
+├── data/                # JSON e CSV com dados da cliente fictícia
+├── docs/                # Documentação completa (6 etapas do desafio)
+├── src/                 # Código-fonte modular
+│   └── ui/              # Componentes de interface (sidebar, chat, badges)
+├── app.py               # Ponto de entrada da aplicação
+├── Makefile             # Automação de instalação e execução
+├── requirements.txt     # Dependências do projeto
+├── README.md            # Você está aqui
+└── LICENSE              # Apache 2.0
 ```
 
 ---
 
-## 🚀 Guia de Execução
+## 🚀 Como Rodar
 
-### Instalação
+### Com Makefile (recomendado)
 
 ```bash
-pip install -r requirements.txt
+# 1. Instalar dependências e baixar modelo
+make install
+make ollama-pull
+
+# 2. Em outro terminal, iniciar o Ollama
+make ollama
+
+# 3. Rodar a Câmbia
+make run
 ```
 
-### Configuração do Ollama
+### Manualmente
 
 ```bash
+# 1. Criar ambiente virtual
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 2. Instalar dependências
+pip install -r requirements.txt
+
+# 3. Baixar modelo e iniciar Ollama (em outro terminal)
 ollama pull llama3.2:1b
 ollama serve
-```
 
-### Execução
-
-```bash
+# 4. Rodar a aplicação
 streamlit run app.py
 ```
 
-### Execução com Makefile
+Acesse `http://localhost:8501` e comece a conversar com a Câmbia!
 
-```bash
-make install
-make run
-```
+---
+
+## ✨ Diferenciais
+
+|        Diferencial         |                         Por que importa                          |
+|----------------------------|------------------------------------------------------------------|
+| 🎨 **Tema visual próprio** |        CSS customizado com animações, paleta roxa e verde        |
+|   🔊 **Alertas sonoros**   |      Você escuta quando o mercado oscila — sem olhar a tela      |
+|    🧩 **Quick Replies**    | Sugestões de perguntas prontas pra quem não sabe o que perguntar |
+|  📊 **Badges de mercado**  |      Status visual rápido: "Dólar Baixo", "Mercado Aberto"       |
+|  🧪 **Tipagem rigorosa**   |     TypedDict + Type Hints em todo o projeto — zero warnings     |
+|   🏗️ **Código modular**    |        12 arquivos organizados por responsabilidade única        |
 
 ---
 
 ## 📊 Status do Projeto
 
-| Entregável      | Situação      |
-| --------------- | ------------- |
-| Desenvolvimento | ✅ Concluído  |
-| Funcionalidades | ✅ Concluído  |
-| Documentação    | ✅ Concluído  |
-| Assets Visuais  | ✅ Concluído  |
-| Testes          | ✅ Concluído  |
-| Vídeo Pitch     | ✅ Concluído  |
+|       Entregável        | Situação |
+|-------------------------|----------|
+| Documentação do agente  |    ✅    |
+|  Base de conhecimento   |    ✅    |
+|         Prompts         |    ✅    |
+|   Aplicação funcional   |    ✅    |
+|  Avaliação e métricas   |    ✅    |
+|       Vídeo Pitch       |    ✅    |
 
 ---
 
 ## 👨‍💻 Autor
 
-**Pedro PM Dias**
+### **Pedro PM Dias**
 
-Projeto desenvolvido para demonstrar conhecimentos em:
+Feito com 💜, café e curiosidade.
 
-* Inteligência Artificial Generativa
-* Engenharia de Prompt
-* Python
-* Streamlit
-* Ollama
-* Integração de APIs
+> *"Se você chegou até aqui, já sabe mais de câmbio do que 90% das pessoas."*
 
 ---
 
 ## 📜 Licença
 
-Distribuído sob a licença Apache 2.0.
-
-Consulte o arquivo `LICENSE` para mais informações.
+Este projeto está sob a licença Apache 2.0. Consulte o arquivo [LICENSE](./LICENSE) para mais informações.
