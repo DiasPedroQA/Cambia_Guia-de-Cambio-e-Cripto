@@ -85,9 +85,9 @@ Os arquivos presentes em `assets/` são utilizados para:
 | `P3.png`                                 | Consulta cambial        | ✅      |
 | `P4.png`                                 | Conteúdo educativo      | ✅      |
 | `P5.png`                                 | Continuação da análise  | ✅      |
-| `video-pitch-cambia.mp4`                 | Apresentação oficial    | ⬜      |
-| `arquitetura-cambia.png`                 | Diagrama arquitetural   | ⬜      |
-| `cambia-demo.gif`                        | Demonstração animada    | ⬜      |
+| `video-pitch-cambia.mp4`                 | Apresentação oficial    | ✅      |
+| `arquitetura-cambia.png`                 | Diagrama arquitetural   | ✅      |
+| `cambia-demo.gif`                        | Demonstração animada    | ✅      |
 
 ---
 
@@ -264,12 +264,12 @@ make run
 
 | Entregável      | Situação      |
 | --------------- | ------------- |
-| Desenvolvimento | ✅ Concluído   |
-| Funcionalidades | ✅ Concluído   |
-| Documentação    | ✅ Concluído   |
-| Assets Visuais  | ✅ Concluído   |
-| Testes          | ✅ Concluído   |
-| Vídeo Pitch     | ⬜ Em produção |
+| Desenvolvimento | ✅ Concluído  |
+| Funcionalidades | ✅ Concluído  |
+| Documentação    | ✅ Concluído  |
+| Assets Visuais  | ✅ Concluído  |
+| Testes          | ✅ Concluído  |
+| Vídeo Pitch     | ✅ Concluído  |
 
 ---
 
